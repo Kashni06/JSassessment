@@ -1,0 +1,45 @@
+
+
+// create a variable to hold your NFT's
+const digitalAssets=[]
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function createToken (name,_eyecolor,_shirtdesign,accessory) {
+    const token={
+        "name":name,
+        "eyecolor":_eyecolor,
+         "shirtdesign":_shirtdesign,
+         "accessory":accessory
+
+    }
+    digitalAssets.push(token);
+    console.log("Minted: "+ name);
+
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function displayTokens () {
+ for(let i=0;i<digitalAssets.length;i++){
+    console.log("\nID: \t\t"+ (i+1));
+    console.log("Name: \t\t" + digitalAssets[i].name);
+    console.log("Eye Color: \t" +digitalAssets[i].eyecolor);
+    console.log("ShirtDesign:" + digitalAssets[i].shirtdesign);
+    console.log("Accessory: \t" + digitalAssets[i].accessory);
+ }
+}
+
+// print the total number of NFTs we have minted to the console
+function getAssetCount() {
+ console.log("\n"+digitalAssets.length);
+}
+
+// call your functions below this line
+createToken("Alice","green","t-shirt","Necklace");
+createToken("Bob","brown","hoodie","Watch");
+createToken("Charl","blue","blazer","Bracelet");
+createToken("David","black","tank top","Ring");
+displayTokens();
+getAssetCount();
